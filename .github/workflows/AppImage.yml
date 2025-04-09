@@ -1,5 +1,5 @@
 name: AppImage Build
-on:
+on: pull
   release:
     types: [created, edited]
   workflow_dispatch:
