@@ -1,4 +1,5 @@
 name: AppImage Build
+on:
   release:
     types: [created, edited]
   workflow_dispatch:
@@ -7,7 +8,6 @@ name: AppImage Build
         description: 'Release tag'
         required: true
 
-on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -30,3 +30,4 @@ jobs:
         name: "Release build (${{ github.event.inputs.tag }})"
         artifacts: "Geany*.AppImage"
         token: ${{ secrets.GITHUB_TOKEN }}
+
